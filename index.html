@@ -1,0 +1,461 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JPixel官方网站</title>
+		<link rel="icon" type="image/png" sizes="64x64" href="https://s2.ax1x.com/2020/03/11/8AuXIP.png"/>
+		<link rel="apple-touch-icon" type="image/png" sizes="64x64" href="https://s2.ax1x.com/2020/03/11/8AuXIP.png"/>
+		<script src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.js"></script>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			a {
+				text-decoration: none;
+			}
+			html {
+				background-color: rgb(239, 239, 239);
+				font-family: 'asapbold';
+			}
+			#logo {
+				background: url(https://s2.ax1x.com/2020/03/11/8AuvPf.png) no-repeat;
+				background-size: 100%;
+				width: 100%;
+				height: 100%;
+			}
+			.logo {
+				background-repeat: no-repeat;
+				background-size: 100%;
+				width: 100%;
+				height: 600px;
+				display: none;
+			}
+			#IP {
+				float: left;
+				height: 100px;
+				width: 48%;
+				background-image: url(https://s2.ax1x.com/2020/03/11/8Aucr9.jpg);
+				display: inline-block;
+			}
+			#IP_BG {
+				float: right;
+				width: 48%;
+				height: 100px;
+				background-image: url(https://s2.ax1x.com/2020/03/11/8AuRV1.md.jpg);
+				background-size: 100% 100%;
+				display: inline-block;
+			}
+			#ZZ {
+				float: left;
+				height: 100px;
+				width: 48%;
+				background-image: url(https://s2.ax1x.com/2020/03/11/8Aucr9.jpg);
+				display: inline-block;
+			}
+			#ZZ_BG {
+				float: right;
+				width: 48%;
+				height: 100px;
+				background-image: url(https://s1.ax1x.com/2020/03/16/8JL5w9.md.jpg);
+				background-size: 100% 100%;
+				display: inline-block;
+			}
+			#QQ {
+				float: right;
+				height: 100px;
+				width: 48%;
+				background-image: url(https://s2.ax1x.com/2020/03/11/8Aucr9.jpg);
+				display: inline-block;
+			}
+			#QQ_BG {
+				float: left;
+				width: 48%;
+				height: 100px;
+				background-image: url(https://s2.ax1x.com/2020/03/11/8AN1PJ.md.png);
+				background-size: 100% 100%;
+				display: inline-block;
+			}
+			#YHF_BG{
+				float: left;
+				width: 48%;
+				height: 100px;
+				background-image: url(https://s1.ax1x.com/2020/05/10/Y3awkD.jpg);
+				background-size: 100% 100%;
+				display: inline-block;
+			}
+			#YHF{
+				float: right;
+				height: 100px;
+				width: 48%;
+				background-image: url(https://s2.ax1x.com/2020/03/11/8Aucr9.jpg);
+				display: inline-block;
+			}
+			.boxs {
+				width: 100px;
+				height: 100px;
+				margin-top: 10px;
+				margin-left: 10px;
+			}
+			h2 {
+				font-size: 30px;
+				color: #191919;
+				font-weight: 500;
+				line-height: 1.1;
+			}
+			::-webkit-scrollbar {
+				width: 0px;
+			}
+			.button {
+				height: 30px;
+				width: 100px;
+				border: solid 3px #2ec06c;
+				color: #2EC06C;
+				padding: 0px 40px;
+				border-radius: 30px;
+				display: inline-block;
+				text-align: center;
+				margin-top:20px;
+				margin-left:10px;
+				transition:transform 0.3s;
+				font-weight: bold;
+			}
+			.button:hover {
+				transform: scale(1.1,1.1);
+			}
+			p {
+				font-size: 24px;
+				line-height: 30px;
+				font-weight: bold;
+				color: #404040;
+				border-left: 10px;
+			}
+			.item{
+				height:40px;
+			 	width:40px;
+				position: absolute;
+  				left: 0px;
+  				top: 0px;
+  				background-image:url(https://s1.ax1x.com/2020/03/12/8ZnuxU.png);
+  				background-size:100% 100%;
+  				display:none;
+			}
+		</style>
+	</head>
+
+	<body id = "Main">
+			<div id = "logobc1" class="logo" style ="background-image:url('https://s2.ax1x.com/2020/03/11/8AlJJ0.md.png');">
+			<div id = "logo"></div>
+		</div>
+		<div id = "logobc2" class="logo" style ="background-image:url('https://s2.ax1x.com/2020/03/11/8AKSxg.md.png');">
+			<div id = "logo"></div>
+		</div>
+		<div id = "logobc3" class="logo" style ="background-image:url('https://s2.ax1x.com/2020/03/11/8Auoxe.md.png');">
+			<div id = "logo"></div>
+		</div>
+		<div id = "logobc4" class="logo" style ="background-image:url('https://s2.ax1x.com/2020/03/11/8Auf56.md.png');">
+			<div id = "logo"></div>
+		</div>
+		<div id = "IP" class="HelfBlock">
+			<div class = "text Boxs">
+				<h2>我们欢迎您的加入</h2>
+				<br />
+				<p>
+					mc.jpixel.top 
+				</p>
+				<br />
+				<p>
+					服务器版本为1.14.4, 1.12.2 - 1.15.2均可进入
+				</p>
+				<a class="button" href="javascript:void(0);" onclick="javascript:copyText( 'mc.jpixel.top', function (){console.log('复制成功')})">复制地址</a>
+				<br/>
+				<br/>
+				<p>Admin list:</p>
+				<p>▪ Jorylee</p>
+				<p>▪ dmmq666</p>
+				<p>▪ Imxc</p>
+				<p>▪ Strange_name</p>
+				<p>(alphabet. server owner first)</p>
+				<br />
+			</div>
+		</div>
+		<div id = "IP_BG" class="HelfBlock"></div>
+		<div id = "QQ" class="HelfBlock">
+			<div class = "text Boxs">
+				<h2>欢迎加入游戏交流群</h2>
+				<br />
+				<br />
+				<br />
+				<p>
+					QQ群：1077412301
+				</p>
+				<br />
+				<br />
+                <a class="button" href="javascript:void(0);" onclick="window.open('https://jq.qq.com/?_wv=1027&k=5WgdHCg','_blank')">加入群聊</a>
+				<a class="button" href="javascript:void(0);" onclick="javascript:copyText( '1077412301', function (){console.log('复制成功')})">复制群号</a>
+			</div>
+		</div>
+		<div id = "QQ_BG" class="HelfBlock"></div>
+		<div id = "ZZ" class="HelfBlock">
+			<div class = "text Boxs">
+				<h2>我们需要你的帮助</h2>
+				<br />
+				<p>你的赞助将会是我们继续向前的动力！</p>
+				
+				<br />
+				<p>
+					注:所有赞助的费用都只会被用于Jpixel
+				</p>
+				<br />
+
+				<a class="button" href="javascript:void(0);" onclick="window.open('https://s2.ax1x.com/2020/03/11/8AcDJ0.jpg','_blank')">支付宝</a>
+				<a class="button" href="javascript:void(0);" onclick="window.open('https://s2.ax1x.com/2020/03/11/8AcrWV.png','_blank')">微信</a>
+				<br />
+				<a class="button" href="javascript:void(0);" onclick="window.open('https://www.mkuaiyun.com/mclist/shop/2682','_blank')">氪金商店</a>
+			</div>
+		</div>
+		<div id = "ZZ_BG" class="HelfBlock"></div>
+		<div id = "YHF" class="HelfBlock">
+			<div class = "text Boxs">
+				<h2>友好服：环球旅行</h2>
+				<br />
+				<p>正版验证</p>
+				
+				<br />
+				<p>
+					持续跟进最新快照版本！
+					<br/>
+					IP: play.hytf233.cn
+				</p>
+				<a class="button" href="javascript:void(0);" onclick="javascript:copyText( 'play.hytf233.cn', function (){console.log('复制成功')})">复制地址</a>
+				<br />
+				<br />
+				<p>环球旅行交流群：1045086918</p>
+				<a class="button" href="javascript:void(0);" onclick="window.open('https://jq.qq.com/?_wv=1027&k=5D43n0L')">加入群聊</a>
+				<a class="button" href="javascript:void(0);" onclick="javascript:copyText( '1045086918', function (){console.log('复制成功')})">复制群号</a>
+			</div>
+		</div>
+		<div id = "YHF_BG" class="HelfBlock"></div>
+		<div class = "item"> </div>
+		<div class = "dm"></div>
+		<script>
+			var phone = !(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent));
+			var logox = document.body.clientWidth;
+			var logoMain = document.getElementsByClassName("logo");
+			var HelfBlock = document.getElementsByClassName("HelfBlock");
+			var button = document.getElementsByClassName("button");
+			var Boxs = document.getElementsByClassName("Boxs");
+			var data = new Date();
+			var hours = data.getHours();
+			var Main = document.getElementById("Main");
+			var item = document.getElementsByClassName("item");
+			var p = document.getElementsByTagName("p");
+			var h2 = document.getElementsByTagName("h2");
+			var br = document.getElementsByTagName("br");
+			var html = document.getElementsByTagName("html")[0];
+			var itemSize = 40;
+			var WinW = html.offsetWidth;
+			var	WinH = html.offsetHeight;
+			var LastWidth;
+			//复制文本
+			function copyText(text, callback) {// text: 要复制的内容， callback: 回调
+				var tag = document.createElement('input');
+				tag.setAttribute('id', 'cp_hgz_input');
+				tag.value = text;
+				document.getElementsByTagName('body')[0].appendChild(tag);
+				document.getElementById('cp_hgz_input').select();
+				document.execCommand('copy');
+				document.getElementById('cp_hgz_input').remove();
+				if (callback) {
+					callback(text)
+				}
+			}
+			//获取滑动条
+			function getScrollbarWidth() {
+				var odiv = document.createElement('div'), //创建一个div
+				styles = {
+					width : '100px',
+					height : '100px',
+					overflowY : 'scroll'//让他有滚动条
+				}, i, scrollbarWidth;
+				for (i in styles)
+				odiv.style[i] = styles[i];
+				document.body.appendChild(odiv);
+				//把div添加到body中
+				scrollbarWidth = odiv.offsetWidth - odiv.clientWidth;
+				//相减
+				odiv.remove();
+				//移除创建的div
+				return scrollbarWidth;
+				//返回滚动条宽度
+			}
+			//设置大小
+			function setSize() {
+				phone = !(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent));
+				Width = document.body.clientWidth;
+				//调整香蕉大小
+				if(phone) itemSize = parseInt(Width/30);
+				else itemSize = (Width/10);
+				for(var i=0;i<item.length;i++){
+					item[i].style.width = itemSize + "px";
+					item[i].style.height = itemSize + "px";
+				}
+				//调整香蕉位置
+				var lbn = WinW/LastWidth;
+				for(var i=0;i<ItemList.length;i++){
+					ItemList[i].x*=lbn;
+				}
+				Width = document.body.clientWidth;
+				for (var i = 0; i < logoMain.length; i++) {
+					logoMain[i].style.height = Width * 850 / 1920 + "px";
+				}
+				for (var i = 0; i < HelfBlock.length; i++) {
+					if (phone)
+						HelfBlock[i].style.width = ((Width / 2) - (getScrollbarWidth() / 2)) + "px";
+					else
+						HelfBlock[i].style.width = Width + "px";
+					if (phone)
+						HelfBlock[i].style.height = (Width / 2) * 0.7 + "px";
+					else
+						HelfBlock[i].style.height = Width * 0.8 + "px";
+				}
+				//框
+				for(var i=0;i<Boxs.length;i++){
+				if (phone) {
+					Boxs[i].style.marginLeft = (Width / 2) * 0.15 + "px";
+					Boxs[i].style.width = (Width / 2) - parseInt(Boxs[i].style.marginLeft) + "px";
+				} else {
+					Boxs[i].style.marginLeft = Width * 0.11 + "px";
+					Boxs[i].style.width = Width - parseInt(Boxs[i].style.marginLeft) + "px";
+				}
+				if (phone) {
+					Boxs[i].style.height = (Width / 2) * 0.7 * 0.6 + "px";
+					Boxs[i].style.marginTop = (Width / 2) * 0.7 * 0.13 + "px";
+				} else {
+					Boxs[i].style.height = Width * 0.7 + "px";
+					Boxs[i].style.marginTop = Width * 0.13 + "px";
+				}
+				}
+				//按钮
+				for (var i = 0; i < button.length; i++) {
+					if (phone) {
+						button[i].style.height = (Width / 2) * 0.04 + "px";
+						button[i].style.padding = Width * 0.006 + "px" + " " + Width * 0.04 + "px";
+					} else {
+						button[i].style.height = Width * 0.06 + "px";
+						button[i].style.padding = Width * 0.012 + "px" + " " + Width * 0.08 + "px";
+					}
+					if (phone) {
+						button[i].style.width = (Width / 2) * 0.1 + "px";
+					} else {
+						button[i].style.width = Width * 0.15 + "px";
+					}
+					button[i].style.borderRadius = parseInt(button[i].style.height) + "px";
+					//按钮文本大小
+					button[i].style.fontSize = 0.6 * parseInt(button[i].style.height) + "px";
+					button[i].style.lineHeight = parseInt(button[i].style.height) + "px";
+					//button[i].style.paddingTop = 0.25 * parseInt(button[i].style.height) + "px";
+
+				}
+				//h2标记
+				for(var i=0;i<h2.length;i++){
+					if (phone) {
+						h2[i].style.fontSize = (Width / 2) * 0.04 + "px";
+						h2[i].style.lineHeight = (Width / 2) * 0.04 + "px";
+					} else {
+						h2[i].style.fontSize = Width * 0.08 + "px";
+						h2[i].style.lineHeight = Width * 0.08 + "px";
+					}
+				}
+				//p标记
+				for(var i=0;i<p.length;i++){
+					if (phone) {
+						p[i].style.fontSize = (Width / 2) * 0.04*0.7 + "px";
+						p[i].style.lineHeight = (Width / 2) * 0.05*0.7 + "px";
+					} else {
+						p[i].style.fontSize = Width * 0.04*0.7 + "px";
+						p[i].style.lineHeight = Width * 0.06*0.7 + "px";
+					}
+				}
+				//br标记
+				for(var i=0;i<br.length;i++){
+					if (phone) {
+						br[i].style.lineHeight = (Width / 2) * 0.04*0.7 + "px";
+					} else {
+						br[i].style.lineHeight = Width * 0.08*0.7 + "px";
+					}
+				}
+				LastWidth = Width;
+			}
+
+			//设置时间图片
+			if (hours >= 0 && hours < 6)
+				logoMain[0].style.display = "block";
+			else if (hours >= 6 && hours < 12)
+				logoMain[1].style.display = "block";
+			else if (hours >= 12 && hours < 18)
+				logoMain[2].style.display = "block";
+			else if (hours >= 18 && hours < 24)
+				logoMain[3].style.display = "block";
+			//设置
+			function Item (){
+				this.x = parseInt(Math.random()*(WinW-itemSize));
+				this.y = 0;
+				this.cd = 0;
+			};
+			var ItemList = [];
+			ItemList.push(new Item());
+			var LastTime = new Date().getTime();
+			//香蕉移动方法
+			function moveItem(){
+				var NowTime = new Date().getTime();
+				for(var i=0;i<ItemList.length;i++){
+					//console.log(NowTime-ItemList[i].cd);
+					if(NowTime-ItemList[i].cd>50){
+						ItemList[i].y += parseInt(Math.random()*10)/5 + 1;
+						if(Math.random()>0.3) ItemList[i].x - 5 + Math.random()*10;
+						if(ItemList[i].x>WinW-itemSize) ItemList[i].x = WinW-itemSize;
+						if(ItemList[i].x<0) ItemList[i].x = 0;
+						if(ItemList[i].y>WinH-itemSize) {
+							ItemList[i].y = 0; 
+							//console.log(ItemList[i].y);
+							//console.log(WinH-40);
+						}
+						item[i].style.left = ItemList[i].x + "px";
+						item[i].style.top = ItemList[i].y + "px";
+						if(item[i].style.display = "none") item[i].style.display = "block";
+						ItemList[i].cd = new Date().getTime();
+						//console.log("yidong");
+					}
+				}
+				//生成香蕉
+				if(NowTime - LastTime>1800&&ItemList.length<50){
+					LastTime = NowTime;
+					if(Math.random()>0.4) setItem();
+				}
+			} 
+			//设置香蕉
+			function setItem(){
+				Main.innerHTML = Main.innerHTML+"<div class = 'item'> </div>";
+				ItemList.push(new Item());
+				ItemList[ItemList.length-1].x = Math.random()*(WinW-itemSize);
+				ItemList[ItemList.length-1].y = 0;
+				ItemList[ItemList.length-1].cd = new Date().getTime();
+				item[ItemList.length-1].style.height = itemSize + "px";
+				item[ItemList.length-1].style.width = itemSize + "px";
+			}
+			window.onresize = function() {
+				setSize();
+				WinW = html.offsetWidth;
+				WinH = html.offsetHeight;
+			};
+			window.onload = function() {
+				setSize();
+				var cycle = setInterval("moveItem()",0);
+				WinW = html.offsetWidth;
+				WinH = html.offsetHeight;
+			};
+		</script>
+	</body>
+</html>
+
