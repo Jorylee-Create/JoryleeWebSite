@@ -23,12 +23,12 @@ a {
     text-decoration: none
 }
 html, body {
-    background-size:100% auto;
     height: 100%;
-
 }
 html{
     background-image:url('https://img.paulzzh.tech/touhou/random');
+    background-size:100% auto;
+    background-repeat: no-repeat;
 }
 
 input[type="button"], input[type="submit"], input[type="reset"] {
