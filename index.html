@@ -34,12 +34,12 @@
         window.onload = function(){
           if(storage["BackgroundChoose"] == "1"){
             document.getElementsByTagName("html")[0].style.backgroundImage = "url('https://img.paulzzh.tech/touhou/random')";
-            document.getElementsByClassName("MenuButtom")[1].style.backgroundColor = "red";
-            document.getElementsByClassName("MenuButtom")[2].style.backgroundColor = "#66ccff";
-          } else {
-            document.getElementsByTagName("html")[0].style.backgroundImage = "url('static/img/defaultBG.jpg')";
             document.getElementsByClassName("MenuButtom")[2].style.backgroundColor = "red";
             document.getElementsByClassName("MenuButtom")[1].style.backgroundColor = "#66ccff";
+          } else {
+            document.getElementsByTagName("html")[0].style.backgroundImage = "url('static/img/defaultBG.jpg')";
+            document.getElementsByClassName("MenuButtom")[1].style.backgroundColor = "red";
+            document.getElementsByClassName("MenuButtom")[2].style.backgroundColor = "#66ccff";
           }
         }
       </script>
@@ -76,7 +76,8 @@
         <ul id="search_methods" class="search-methods">
           <li data-type="google" class="search-item google">谷歌</li>
           <li data-type="bing" class="search-item bing">必应</li>
-          <li data-type="baidu" class="search-item baidu">百度</li>
+          <li data-type="baidu" class="search-item baidu">百度</li
+          <li data-type="so" class="search-item so">360搜索</li>
           <li data-type="sogou" class="search-item sogou">搜狗</li>
           <li data-type="wangpan" class="search-item wangpan">网盘搜索</li>
         </ul>
@@ -99,7 +100,7 @@
           <li><a href="https://oi-wiki.org/" class="jj-list-link" target="_blank">OIWiki</a></li>
           <li><a href="http://noi.openjudge.cn/" class="jj-list-link" target="_blank">NOIOJ</a></li>
           <li><a href="https://codeforces.com/" class="jj-list-link" target="_blank">CodeForces</a></li>
-          <li><a href="http://www.usaco.org/" class="jj-list-link" target="_blank">USACO</a></li>
+          <li><a href="https://www.usaco.org/" class="jj-list-link" target="_blank">USACO</a></li>
           <li><a href="https://zh.cppreference.com/w/cpp" class="jj-list-link" target="_blank">C++参考手册</a></li>
         </ul>
       </div>
