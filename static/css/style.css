@@ -6,6 +6,7 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    user-select: none;
 }
 body, ul, li, h1, h2, h3, h4, h5, h6, p, form, dl, dt, dd {
     margin: 0px;
@@ -20,15 +21,19 @@ li {
     list-style: none;
 }
 a {
-    text-decoration: none
+    text-decoration: none;
+    color:rgba(255,255,255,0.8);
 }
 html, body {
     height: 100%;
+
 }
 html{
-    background-image:url('https://img.paulzzh.tech/touhou/random');
-    background-size:100% auto;
+    background-image:none;
+    background-color:white;
     background-repeat: no-repeat;
+    background-position: center center;
+    background-size:100% auto;
 }
 
 input[type="button"], input[type="submit"], input[type="reset"] {
@@ -46,16 +51,16 @@ textarea {
 .inner-center {
     width: 1000px;
     margin: 0 auto;
- 
+
 }
 
 .main {
     padding-top: 5%;
     min-height: 100%;
-   
+
 }
 .content-inside{
-   padding-bottom: 60px;
+ padding-bottom: 60px;
 }
 .footer {
     height: 60px;
@@ -232,23 +237,23 @@ textarea {
     border-color: #FDA31E 96%;
     box-shadow: 0 0 10px #FDA31E;
     } */
-.input-wrap .clear-keyword {
-    display: none;
-    position: absolute;
-    top: 50%;
-    right: 18px;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #d2d2d2;
-    font-size: 30px;
-}
+    .input-wrap .clear-keyword {
+        display: none;
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #d2d2d2;
+        font-size: 30px;
+    }
 
-.search-submit {
-    width: 123px;
-    height: 54px;
-    line-height: 26px;
-    /* background: url("./img/search.png") #1890ff 48px center no-repeat; */
-    background-color: #1890FF;
+    .search-submit {
+        width: 123px;
+        height: 54px;
+        line-height: 26px;
+        /* background: url("./img/search.png") #1890ff 48px center no-repeat; */
+        background-color: #1890FF;
     /* background-image: url("./img/search.png"); 
     background-size: 48px; */
     background-repeat: no-repeat;
@@ -293,7 +298,7 @@ textarea {
     line-height: 25px;
     color: rgba(49, 70, 89, 1);
     font-weight: bold;
-    color:white;
+    color:black;
     mix-blend-mode: exclusion;
 }
 .jj-list-con {
@@ -332,13 +337,10 @@ textarea {
     height:3em;
     width:3em;
     overflow:hidden;
-    transition:width 0.5s;
+    transition:width 0.5s,height 0.5s;
     border-radius: 2em;
-    background-color:#66ccff;
-}
-
-#SetMenu:hover{
-    width:9.6em;
+    background-color:rgba(102,204,255,0.8);
+    z-index: 999;
 }
 
 .MenuButtom{
@@ -352,13 +354,104 @@ textarea {
     background-repeat: no-repeat;
     background-position: center center;
     transition:transform 0.5s;
-    float:right;
+    position:absolute;
+    right:0;
+    bottom:0;
     padding-right:0.2em;
 }
 
 .MenuButtom:hover{
     transform: rotate(180deg);
 }
+
+#menu{
+    height:10em;
+    width:10em;
+    display:none;
+}
+
+#menu #tit{
+    display:block;
+    width:13em;
+    text-align:center;
+    line-height: 2em;
+    color:#FFF;
+    font-size:1.5em;
+    transition: color 0.3s;
+    padding:0 auto;
+}
+
+#menu .choose:hover{
+    border-radius: 0;
+    background-color:rgba(256,256,256,0.4);
+}
+
+#menu .choose{
+    overflow: hidden;
+    display:block;
+    text-align:center;
+    font-size:1.5em;
+    line-height: 2em;
+    margin-right:1em;
+    margin-right:0.5em;
+    height:2em;
+    width:13.3em;
+    color:white;
+}
+
+#menu .choose input{
+    height:1.4em;
+    width:1.4em;
+    color:red;
+    margin: 3px 3px 0px 5px;
+    border: none 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: inline-block;
+    line-height: normal;
+    position: static;
+    color: rgb(84, 84, 84);
+}
+
+
+#menu .information{
+    overflow: hidden;
+    display:block;
+    text-align:center;
+    font-size:1.5em;
+    line-height: 2em;
+    margin-right:1em;
+    height:2em;
+    width:13.3em;
+    color:white;
+    background-color:rgba(102,204,255,0.8);
+}
+
+.CFList{
+    position:absolute;
+    Z-index:999;
+    width:100%;
+    display:none;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.CFList a{
+    border-radius: 0;
+    border:0.5px solid #CFCFCF;
+}
+
+[name=HEXColor],[name=URL]{
+    height:2.5em;
+    text-decoration: none;
+    outline-style: none ;
+    border: 0px;
+    border-radius: 2em;
+    padding:0 1em;
+    border: 1px solid #ccc;
+    margin:0 0.5em;
+}
+
 /*-----------------------------简洁版样式定义- 结束---------------------------------------------------*/
 
 
