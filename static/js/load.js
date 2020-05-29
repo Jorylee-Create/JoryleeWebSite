@@ -129,7 +129,7 @@ function setBG(){
     		$("#choose2").attr("checked","checked");      
     		break;
     	case "3":
-    		html.style.backgroundImage = "white";
+    		html.style.backgroundImage = "none";
     		html.style.backgroundColor = '#' + storage["BackgroundColor"];
     		titColor("white");
     		$("#choose0").removeAttr("checked");
