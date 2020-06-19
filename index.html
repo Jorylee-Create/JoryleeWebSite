@@ -10,7 +10,6 @@
   <link href="static/css/style.css" rel="stylesheet" type="text/css">
   <!-- 百度统计代码 -->
   <script>
-    var storage = window.localStorage;
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -92,7 +91,7 @@
           <li><a href="https://www.luogu.com.cn/" class="jj-list-link" target="_blank">洛谷</a></li>
           <li><a href="https://oi-wiki.org/" class="jj-list-link" target="_blank">OIWiki</a></li>
           <li><a href="http://noi.openjudge.cn/" class="jj-list-link" target="_blank">NOIOJ</a></li>
-          <li  onmouseover="OpenCFList(this);" onmouseleave="CloseCFList(this);"><a href="https://codeforces.com/" class="jj-list-link" target="_blank">CodeForces主站</a><div class = "CFList">
+          <li onmouseover="OpenList(this);" onmouseleave="CloseList(this);"><a href="https://codeforces.com/" class="jj-list-link" target="_blank">CodeForces主站</a><div class = "List">
             <a href="http://codeforces.ml" class="jj-list-link" target="_blank">镜像Ⅰ</a>
             <a href="http://codeforc.es" class="jj-list-link" target="_blank">镜像Ⅱ</a>
             <a href="http://m1.codeforces.ml" class="jj-list-link" target="_blank">镜像Ⅲ</a>
@@ -133,11 +132,12 @@
       </div>
       <div class="jj-list">
       </div>
+      <!- /<div id="modify" onclick = "if(!editing) {this.style.backgroundColor = 'rgba(102,204,255,0.8)';editing = true} else {this.style.backgroundColor = 'rgba(255,73,73,0.8)';editing = false}"></div>
       <div id="SetMenu" onclick = "foo();">
-        <div class="MenuButtom" onclick = "menu();"></div>
+        <div class="MenuButtom" onclick = "changeMenu();"></div>
         <div id = "menu">
           <span id = "tit">背景设置菜单</span>
-          <span class = "choose"><input type="radio" name="category" value="0" id = "choose0"/>随机景观图片</span> 
+          <span class = "choose"><input type="radio" name="category" value="0" id = "choose0" />随机景观图片</span> 
           <span class = "information">加载速度受<a href="https://api.ixiaowai.cn/gqapi/gqapi.php">接口</a>速度限制</span>
           <span class = "choose"><input type="radio" name="category" value="1" id = "choose1"/>二次元随机图片</span> 
           <span class = "information">加载速度受<a href="https://api.ixiaowai.cn/api/api.php">接口</a>速度限制</span>
@@ -148,6 +148,11 @@
           <span class = "choose"><input type="radio" name="category" value="4" id = "choose4" />自定义图片链接</span>  
           <span class = "information"><input type="text" name="URL" oninput="storage['BackgroundImage'] = value;foo();"></span>       
         </div>
+      </div>
+      <div id="pay">
+        <div id = "payButton"></div>
+        <a href="https://s2.ax1x.com/2020/03/11/8AcrWV.png"><div id = "weChat"></div></a>
+        <a href="https://s2.ax1x.com/2020/03/11/8AcDJ0.jpg"><div id = "aliPay"></div></a>
       </div>
       <!-- 导航地址 end -->
     </div>

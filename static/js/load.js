@@ -1,19 +1,12 @@
-function SetBGRandom(){
-    document.getElementsByTagName("html")[0].style.backgroundImage = "url('https://img.paulzzh.tech/touhou/random')";
-    storage["BackgroundChoose"] = "1";
-    //document.getElementsByClassName("MenuButtom")[2].style.backgroundColor = "red";
-    //document.getElementsByClassName("MenuButtom")[1].style.backgroundColor = "#66ccff";
-}
-
-function SetBGDefault(){
-  	document.getElementsByTagName("html")[0].style.backgroundImage = "url('static/img/defaultBG.jpg')";
-  	storage["BackgroundChoose"] = "0";
-  	//document.getElementsByClassName("MenuButtom")[1].style.backgroundColor = "red";
-  	//document.getElementsByClassName("MenuButtom")[2].style.backgroundColor = "#66ccff";
-
-}
-function menu(){
-	var menu = document.getElementById("menu");
+var storage = window.localStorage;
+var html = document.getElementsByTagName("html")[0];
+var menu = document.getElementById("menu");
+var category = document.getElementsByName("category");
+var information = document.getElementsByClassName("information");
+var choose = document.getElementsByClassName("choose");
+var linkTit = document.getElementsByClassName("jj-list-tit");
+var editing = false;
+function changeMenu(){
 	var setMenu = document.getElementById("SetMenu");
 	if(menu.style.display != "block"){
 		menu.style.display = "block";
@@ -27,148 +20,111 @@ function menu(){
 }
 
 function foo(){
-	var category = document.getElementsByName("category");
-	var information = document.getElementsByClassName("information");
 	for(var i=0;i<information.length;i++){
 		information[i].style.display = "none";
 	}
-    for(var i=0;i<category.length;i++){
-       if (category[i].checked){
-　　　　		information[i].style.display = "block";
-			storage["BackgroundChoose"] = i+"";
-			setBG();
-　　　　}
-    }
+  for(var i=0;i<category.length;i++){
+   if (category[i].checked){
+    　　　　		information[i].style.display = "block";
+    storage["BackgroundChoose"] = i+"";
+    setBG();
+  　　　　}
+}
 }
 
-function OpenCFList(i){
-	var CFList = document.getElementsByClassName("CFList")[0];
-	CFList.style.width = i.clientWidth + "px";
-	CFList.style.display = "block";
+function OpenList(i){
+	i.getElementsByClassName("List")[0].style.width = i.clientWidth + "px";
+	i.getElementsByClassName("List")[0].style.display = "block";
 }
 
-function CloseCFList(i){
-	var CFList = document.getElementsByClassName("CFList")[0];
-	CFList.style.display = "none";
+function CloseList(i){
+	i.getElementsByClassName("List")[0].style.display = "none";
 }
 
 function error(){
-	var html = document.getElementsByTagName("html")[0];
 	html.style.backgroundImage = "none";
 	html.style.backgroundColor = "white";
 }
 
-function getImageDimensions(imgStyleRule) {  
-  var img;  
-  img = new Image();  
-  img.onerror = "error()";
-  console.log(imgStyleRule.replace(/url\(|\)$|"/ig, ''));
-  img.src = imgStyleRule.replace(/url\(|\)$|"/ig, '');
-  img.onload = function(){
-  	setSize({  
-    width: img.naturalWidth,  
-    height: img.naturalWidth 
-  });
-  }  
-  return {  
-    width: img.naturalWidth,  
-    height: img.naturalWidth 
-  };  
-}  
+function setInputChoose(n){
+	for(var i=0;i<choose.length;i++){
+		$("#choose" + i).removeAttr("checked");
+	}
+	$("#choose" + n).attr("checked","checked"); 
+}
 
-function setSize(image){
-	var html = document.getElementsByTagName("html")[0];
-	console.log(document.body.clientWidth/document.body.clientHeight>image.width/image.height);
-	if(document.body.clientWidth/document.body.clientHeight>image.width/image.height) html.style.BackgroundSize = "100% auto";
-	else html.style.BackgroundSize = "auto 100%";
+function titColor(color){
+    for(var i=0;i<linkTit.length;i++){
+      linkTit[i].style.color = color;
+    }
+  }
+
+var listMember = new Array();
+listMember[0] = function(){
+  html.style.backgroundImage = "url('https://api.ixiaowai.cn/gqapi/gqapi.php')";
+  //getImageDimensions(html.style.backgroundImage);
+  html.style.backgroundColor = "white";
+  titColor("white");
+  setInputChoose(0); 
+}
+listMember[1] = function(){
+  html.style.backgroundImage = "url('https://api.ixiaowai.cn/api/api.php')";
+  //getImageDimensions(html.style.backgroundImage);
+  html.style.backgroundColor = "white";
+  titColor("white");
+  setInputChoose(1);
+}
+listMember[2] = function(){
+  html.style.backgroundImage = "url('https://img.paulzzh.tech/touhou/random')";
+  //getImageDimensions(html.style.backgroundImage);
+  html.style.backgroundColor = "white";
+  titColor("white");
+  setInputChoose(2); 
+}
+listMember[3] = function(){
+  html.style.backgroundImage = "none";
+  html.style.backgroundColor = '#' + storage["BackgroundColor"];
+  titColor("white");
+  setInputChoose(3); 
+  document.getElementsByName("HEXColor")[0].value = storage["BackgroundColor"];
+}
+listMember[4] = function(){
+  html.style.backgroundImage = "url('" + storage["BackgroundImage"] + "')";
+  //var ImageInfo = getImageDimensions(storage["BackgroundImage"]);
+  html.style.backgroundColor = "white";
+  setInputChoose(4); 
+  if(storage["BackgroundImage"] != undefined) {
+    document.getElementsByName("URL")[0].value = storage["BackgroundImage"];
+  }
 }
 
 function setBG(){
-	var html = document.getElementsByTagName("html")[0];
-	var linkTit = document.getElementsByClassName("jj-list-tit");
-	function titColor(color){
-		for(var i=0;i<linkTit.length;i++){
-			linkTit[i].style.color = color;
-		}
-	}
-  	switch(storage["BackgroundChoose"]){
-  		case "0":
-    		html.style.backgroundImage = "url('https://api.ixiaowai.cn/gqapi/gqapi.php')";
-    		getImageDimensions(html.style.backgroundImage);
-    		html.style.backgroundColor = "white";
-    		titColor("white");
-    		$("#choose0").removeAttr("checked");
-    		$("#choose1").removeAttr("checked");
-    		$("#choose2").removeAttr("checked");
-    		$("#choose3").removeAttr("checked");
-    		$("#choose4").removeAttr("checked");
-    		$("#choose0").attr("checked","checked");      
-    		break;
-  		case "1":
-    		html.style.backgroundImage = "url('https://api.ixiaowai.cn/api/api.php')";
-    		getImageDimensions(html.style.backgroundImage);
-    		html.style.backgroundColor = "white";
-    		titColor("white");
-    		$("#choose0").removeAttr("checked");
-    		$("#choose1").removeAttr("checked");
-    		$("#choose2").removeAttr("checked");
-    		$("#choose3").removeAttr("checked");
-    		$("#choose4").removeAttr("checked");
-    		$("#choose1").attr("checked","checked");      
-    		break;
-  		case "2":
-    		html.style.backgroundImage = "url('https://img.paulzzh.tech/touhou/random')";
-    		getImageDimensions(html.style.backgroundImage);
-    		html.style.backgroundColor = "white";
-    		titColor("white");
-    		$("#choose0").removeAttr("checked");
-    		$("#choose1").removeAttr("checked");
-    		$("#choose2").removeAttr("checked");
-    		$("#choose3").removeAttr("checked");
-    		$("#choose4").removeAttr("checked");
-    		$("#choose2").attr("checked","checked");      
-    		break;
-    	case "3":
-    		html.style.backgroundImage = "none";
-    		html.style.backgroundColor = '#' + storage["BackgroundColor"];
-    		titColor("white");
-    		$("#choose0").removeAttr("checked");
-    		$("#choose1").removeAttr("checked");
-    		$("#choose2").removeAttr("checked");
-    		$("#choose3").removeAttr("checked");
-    		$("#choose4").removeAttr("checked");
-    		$("#choose3").attr("checked","checked"); 
-    		document.getElementsByName("HEXColor")[0].value = storage["BackgroundColor"];
-    		break;
-    	case "4":
-    		html.style.backgroundImage = "url('" + storage["BackgroundImage"] + "')";
-    		var ImageInfo = getImageDimensions(storage["BackgroundImage"]);
-    		html.style.backgroundColor = "white";
-    		$("#choose0").removeAttr("checked");
-    		$("#choose1").removeAttr("checked");
-    		$("#choose2").removeAttr("checked");
-    		$("#choose3").removeAttr("checked");
-    		$("#choose4").removeAttr("checked");
-    		$("#choose4").attr("checked","checked"); 
-    		if(storage["BackgroundImage"] != undefined) {
-    		document.getElementsByName("URL")[0].value = storage["BackgroundImage"];
-    		}
-    		break;
-    	default:
-    		html.style.backgroundImage = "url('https://api.ixiaowai.cn/gqapi/gqapi.php')";
-    		getImageDimensions(html.style.backgroundImage);
-    		html.style.backgroundColor = "white";
-    		titColor("white");
-    		$("#choose0").removeAttr("checked");
-    		$("#choose1").removeAttr("checked");
-    		$("#choose2").removeAttr("checked");
-    		$("#choose3").removeAttr("checked");
-    		$("#choose4").removeAttr("checked");
-    		$("#choose0").attr("checked","checked");      
-    		break;
-    }
+switch(storage["BackgroundChoose"]){
+  case "0":
+    listMember[0]();   
+    break;
+  case "1":
+    listMember[1]();         
+    break;
+  case "2":
+    listMember[2]();         
+    break;
+  case "3":
+    listMember[3]();    
+    break;
+  case "4":
+    listMember[4]();    
+    break;
+  default:
+    listMember[0]();     
+    break;
+  }
 }
 
-window.onload = function(){
-	setBG();
+
+function edit(){
+
 }
+window.onload = function(){
+     setBG();
+  }

@@ -33,7 +33,7 @@ html{
     background-color:white;
     background-repeat: no-repeat;
     background-position: center center;
-    background-size:100% auto;
+    background-size:cover;
 }
 
 input[type="button"], input[type="submit"], input[type="reset"] {
@@ -427,7 +427,7 @@ textarea {
     background-color:rgba(102,204,255,0.8);
 }
 
-.CFList{
+.List{
     position:absolute;
     Z-index:999;
     width:100%;
@@ -436,7 +436,7 @@ textarea {
     overflow: hidden;
 }
 
-.CFList a{
+.List a{
     border-radius: 0;
     border:0.5px solid #CFCFCF;
 }
@@ -452,6 +452,68 @@ textarea {
     margin:0 0.5em;
 }
 
+#modify{
+    transition:background-color 0.5s;
+}
+
+#pay{
+    position:fixed;
+    right: 1em;
+    bottom: 4.5em;
+    height:3em;
+    width:3em;
+    overflow:hidden;
+    transition:width 0.5s,height 0.5s;
+    border-radius: 2em;
+    background-color:rgba(102,204,255,0.8);
+    z-index: 800;
+}
+
+#pay:hover{
+    width:10em;
+}
+#payButton{
+    width:3em;
+    height:3em;
+    background-size:100% 100%;
+    background-image:url("../img/pay.png");
+    display:inline-block;
+}
+
+#weChat{
+    width:3em;
+    height:3em;
+    border-radius: 50%;
+    background-size:100% 100%;
+    background-image:url("../img/weChat.png");
+    display: inline-block;
+}
+
+#aliPay{
+    width:3em;
+    height:3em;
+    border-radius: 50%;
+    background-size:100% 100%;
+    background-image:url("../img/aliPay.png");
+    display: inline-block;
+}
+
+#modify{
+    position:fixed;
+    right: 1em;
+    bottom: 8em;
+    height:3em;
+    width:3em;
+    overflow:hidden;
+    transition:width 0.5s,height 0.5s;
+    border-radius: 2em;
+    background-color:rgba(102,204,255,0.8);
+    z-index: 800;
+    background-image:url("../img/modify.png");
+    background-size: 70% 70%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
 /*-----------------------------简洁版样式定义- 结束---------------------------------------------------*/
 
 
